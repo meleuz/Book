@@ -13,6 +13,9 @@ import java.util.Objects;
 public class Smartphone extends Product{
     private String maker;
 
+    public Smartphone(int i, String callPhone1, int i1, String maker1) {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -6,28 +6,30 @@ import repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class ProductManagerEmptyTest<ProductManager> {
-    private final ProductRepository repository = new ProductRepository();
-    private final ProductManager manager = new ProductManager(repository);
-    private final Book seventh = new Book(7, "Java7", 1030, "Author7");
+public class ProductManagerEmptyTest {
+    private ProductRepository repository = new ProductRepository();
+    private ProductManager manager = new ProductManager(repository);
+    private Book seventh = new Book(7, "Java7", 1030, "Author7");
     @Test
-    public void shouldGetEmpty() {
+    void shouldGetEmpty() {
         Product[] actual = repository.findAll();
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void shouldSearchByInEmpty() {
+    void shouldSearchByInEmpty() {
         Product[] actual = manager.searchBy("Java7");
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void shouldSearchByInOneItem() {
+    void shouldSearchByInOneItem() {
         manager.add(seventh);
         Product[] actual = manager.searchBy("Java7");
         Product[] expected = new Product[]{seventh};
         assertArrayEquals(expected, actual);
     }
 
+    private void assertArrayEquals(Product[] expected, Product[] actual) {
+    }
 }
