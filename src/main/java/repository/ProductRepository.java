@@ -29,6 +29,5 @@ public class ProductRepository {
                 index++;
             }
         }
-        items = tmp;
     }
 }
